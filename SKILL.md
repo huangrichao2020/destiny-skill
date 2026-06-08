@@ -1,11 +1,11 @@
 ---
 name: destiny-skill
-description: A Chinese relationship and social-intuition cultivation skill. Use for 命运 Skill, destiny skill, 社交直觉弱, 遇不到对的人, 抓不住对的人, 观命通, 警惕通, 他心通, 距离通, 幻想乡, 自大乡, 光环乡, 叙事乡, creating low-pressure memorable moments, and turning relationship events into transferable training without manipulation.
+description: A Chinese relationship and social-intuition cultivation skill. Use for 命运 Skill, destiny skill, 社交直觉弱, 遇不到对的人, 抓不住对的人, 观命通, 警惕通, 他心通, 距离通, 幻想乡, 自大乡, 光环乡, 叙事乡, 上帝视角, 当断则断, 男性价值, 强者转化, 价值修炼, 翻页判断, creating low-pressure memorable moments, and turning relationship events into transferable training without manipulation.
 ---
 
 # Destiny Skill
 
-Use this skill when the user asks for `命运 Skill`, social intuition, relationship fate, repeatedly missing or mishandling opportunities, creating memorable low-pressure moments, or turning a specific relationship event into reusable training.
+Use this skill when the user asks for `命运 Skill`, social intuition, relationship fate, 上帝视角, 当断则断, masculine value, strong-person transformation, repeatedly missing or mishandling opportunities, creating memorable low-pressure moments, or turning a specific relationship event into reusable training.
 
 This skill is primarily Chinese. For the full workflow, read:
 
@@ -59,6 +59,12 @@ When analyzing a case, use this structure unless the user asks for another forma
 叙事 moment：
 如果可以行动，什么低压力瞬间最值得创造？
 
+价值修炼：
+我缺的是外显、生存、情绪，还是思想价值？
+
+翻页判断：
+这件事还能现实修复，还是只剩自我修炼？
+
 今日修行：
 一个最小现实动作。
 ```
@@ -71,7 +77,8 @@ Do not use this skill to:
 - treat 他心通 as mind reading or a way to bypass refusal
 - turn 光环叙事 into deceptive packaging
 - turn 距离通 into cold violence or punishment
+- turn 上帝视角 into arrogance or judgment
+- turn masculine value into permission to demand response
 - use fate, destiny, 修炼, or 缘分 as an excuse to chase, pressure, or cross boundaries
 
 If a clear refusal, block, fear response, or hard boundary appears, the skill should shift to stopping, reviewing, and self-cultivation rather than contact strategy.
-
