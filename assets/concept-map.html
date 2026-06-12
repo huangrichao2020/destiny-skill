@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四乡修行法门 · 概念全景图</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=ZCOOL+XiaoWei&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --card: #14141c;
+    --gold: #c9a84c;
+    --gold-dim: #8a7232;
+    --gold-glow: rgba(201,168,76,0.08);
+    --ink: #d4cfc4;
+    --ink-dim: #7a756c;
+    --red: #a05050;
+    --red-dim: #6b3a3a;
+    --green: #5a8a5a;
+    --blue: #5a7a9a;
+    --purple: #7a5a8a;
+    --border: #2a2822;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:'Noto Serif SC','Songti SC',serif; padding:24px; }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 600px 400px at 20% 15%, rgba(201,168,76,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 500px at 80% 85%, rgba(139,46,46,0.03) 0%, transparent 70%);
+    pointer-events:none; z-index:0;
+  }
+  .container { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+
+  .title { text-align:center; margin-bottom:28px; }
+  .title h1 { font-size:24px; color:var(--gold); letter-spacing:4px; font-weight:700; }
+  .title p { font-size:12px; color:var(--ink-dim); margin-top:6px; letter-spacing:2px; }
+
+  .section-head {
+    display:flex; align-items:center; gap:10px;
+    margin:32px 0 14px; padding-bottom:8px;
+    border-bottom:1px solid var(--border);
+  }
+  .section-head .num {
+    width:24px; height:24px; border:1.5px solid var(--gold-dim);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:11px; color:var(--gold); flex-shrink:0;
+  }
+  .section-head .label { font-size:14px; color:var(--gold); letter-spacing:2px; }
+  .section-head .sub { font-size:11px; color:var(--ink-dim); margin-left:auto; letter-spacing:1px; }
+
+  .village-map { display:flex; justify-content:center; margin:16px 0; }
+  .village-map svg { max-width:100%; height:auto; }
+
+  .concept-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:8px;
+  }
+  .concept-card {
+    background:var(--card); border:1px solid var(--border); padding:14px 16px;
+    position:relative;
+  }
+  .concept-card.full { grid-column:1/-1; }
+  .concept-card .tag {
+    font-size:10px; letter-spacing:2px; font-weight:600; margin-bottom:6px;
+  }
+  .concept-card .tag.gold { color:var(--gold-dim); }
+  .concept-card .tag.red { color:var(--red); }
+  .concept-card .tag.green { color:var(--green); }
+  .concept-card .tag.blue { color:var(--blue); }
+  .concept-card .tag.purple { color:var(--purple); }
+  .concept-card h3 {
+    font-size:14px; color:var(--gold); margin-bottom:6px; letter-spacing:1px; font-weight:600;
+  }
+  .concept-card p {
+    font-size:12.5px; line-height:1.8; color:var(--ink-dim);
+  }
+  .concept-card p em { color:var(--ink); font-style:normal; }
+
+  .flow-chain {
+    display:flex; align-items:center; flex-wrap:wrap; gap:4px;
+    margin:10px 0; font-size:12px;
+  }
+  .flow-chain .node {
+    background:var(--card); border:1px solid var(--border);
+    padding:4px 10px; color:var(--gold); border-radius:2px;
+    white-space:nowrap;
+  }
+  .flow-chain .arrow { color:var(--gold-dim); }
+  .flow-chain .node.red-node { color:var(--red); border-color:var(--red-dim); }
+
+  .nine-grid {
+    display:grid; grid-template-columns:60px 1fr 1fr 1fr;
+    gap:1px; background:var(--border); border:1px solid var(--border);
+    margin:10px 0; font-size:11px;
+  }
+  .nine-grid .cell {
+    background:var(--card); padding:8px 10px; line-height:1.5;
+  }
+  .nine-grid .cell.head {
+    background:#18181f; color:var(--gold-dim); font-weight:600;
+    text-align:center; letter-spacing:1px;
+  }
+  .nine-grid .cell.row-head {
+    background:#18181f; color:var(--gold-dim); font-weight:600;
+    display:flex; align-items:center; justify-content:center;
+    letter-spacing:1px;
+  }
+  .nine-grid .cell em { color:var(--ink); font-style:normal; }
+
+  .layers-row {
+    display:flex; gap:8px; margin:10px 0;
+  }
+  .layer-chip {
+    flex:1; background:var(--card); border:1px solid var(--border);
+    padding:10px; text-align:center;
+  }
+  .layer-chip .lv {
+    font-size:16px; color:var(--gold); font-weight:700; margin-bottom:4px;
+  }
+  .layer-chip .ln {
+    font-size:11px; color:var(--ink-dim); line-height:1.5;
+  }
+
+  .verse {
+    text-align:center; margin-top:32px; padding:20px;
+    border:1px solid var(--border);
+    background:linear-gradient(180deg,transparent,var(--gold-glow));
+  }
+  .verse p { font-size:14px; line-height:2.2; color:var(--gold); letter-spacing:1px; }
+  .verse p .dim { color:var(--ink-dim); font-size:12px; }
+
+  @media (max-width:600px) {
+    .concept-grid { grid-template-columns:1fr; }
+    .layers-row { flex-wrap:wrap; }
+    .layer-chip { min-width:45%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="title">
+  <h1>四乡修行法门 · 概念全景图</h1>
+  <p>从表层到深层，从结构到引擎</p>
+</div>
+
+<!-- Section 1: Four Villages Structure -->
+<div class="section-head">
+  <div class="num">1</div>
+  <div class="label">四乡结构</div>
+  <div class="sub">外层框架 · 你看到的部分</div>
+</div>
+
+<div class="village-map">
+  <svg viewBox="0 0 440 320" width="440" height="320" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ag" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <path d="M0,0 L6,2 L0,4" fill="#c9a84c" opacity="0.6"/>
+      </marker>
+      <marker id="ar" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <path d="M0,0 L6,2 L0,4" fill="#a05050" opacity="0.5"/>
+      </marker>
+    </defs>
+    <line x1="220" y1="55" x2="220" y2="255" stroke="#8a7232" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+    <line x1="75" y1="155" x2="365" y2="155" stroke="#8a7232" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+    <text x="228" y="152" font-size="9" fill="#8a7232" opacity="0.5" font-family="'Noto Serif SC',serif">自我轴</text>
+    <text x="148" y="148" font-size="9" fill="#8a7232" opacity="0.5" font-family="'Noto Serif SC',serif" transform="rotate(-90,155,148)">时间轴</text>
+    <path d="M 248,42 Q 340,55 362,130" stroke="#c9a84c" stroke-width="1.2" fill="none" opacity="0.4" marker-end="url(#ag)"/>
+    <path d="M 362,180 Q 340,255 248,268" stroke="#c9a84c" stroke-width="1.2" fill="none" opacity="0.4" marker-end="url(#ag)"/>
+    <path d="M 192,268 Q 100,255 78,180" stroke="#c9a84c" stroke-width="1.2" fill="none" opacity="0.4" marker-end="url(#ag)"/>
+    <path d="M 78,130 Q 100,55 192,42" stroke="#c9a84c" stroke-width="1.2" fill="none" opacity="0.4" marker-end="url(#ag)"/>
+    <line x1="200" y1="42" x2="90" y2="138" stroke="#a05050" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3" marker-end="url(#ar)"/>
+    <line x1="350" y1="180" x2="242" y2="258" stroke="#a05050" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.3" marker-end="url(#ar)"/>
+    <circle cx="220" cy="32" r="26" fill="#14141c" stroke="#c9a84c" stroke-width="1.5"/>
+    <text x="220" y="29" text-anchor="middle" font-family="'ZCOOL XiaoWei',serif" font-size="16" fill="#c9a84c">大</text>
+    <text x="220" y="44" text-anchor="middle" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">自大乡</text>
+    <circle cx="370" cy="155" r="26" fill="#14141c" stroke="#c9a84c" stroke-width="1.5"/>
+    <text x="370" y="152" text-anchor="middle" font-family="'ZCOOL XiaoWei',serif" font-size="16" fill="#c9a84c">幻</text>
+    <text x="370" y="167" text-anchor="middle" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">幻想乡</text>
+    <circle cx="220" cy="278" r="26" fill="#14141c" stroke="#c9a84c" stroke-width="1.5"/>
+    <text x="220" y="275" text-anchor="middle" font-family="'ZCOOL XiaoWei',serif" font-size="16" fill="#c9a84c">光</text>
+    <text x="220" y="290" text-anchor="middle" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">光环乡</text>
+    <circle cx="70" cy="155" r="26" fill="#14141c" stroke="#c9a84c" stroke-width="1.5"/>
+    <text x="70" y="152" text-anchor="middle" font-family="'ZCOOL XiaoWei',serif" font-size="16" fill="#c9a84c">叙</text>
+    <text x="70" y="167" text-anchor="middle" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">叙事乡</text>
+    <text x="275" y="26" font-size="8" fill="#8a7232" font-family="'Noto Serif SC',serif">定力：放下我执</text>
+    <text x="275" y="38" font-size="8" fill="#6b3a3a" font-family="'Noto Serif SC',serif">法力：托住别人</text>
+    <text x="275" y="296" font-size="8" fill="#8a7232" font-family="'Noto Serif SC',serif">定力：不被评价牵动</text>
+    <text x="275" y="308" font-size="8" fill="#6b3a3a" font-family="'Noto Serif SC',serif">法力：给别人舞台</text>
+    <line x1="20" y1="310" x2="44" y2="310" stroke="#c9a84c" stroke-width="1.2" opacity="0.4"/>
+    <text x="48" y="314" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">相生</text>
+    <line x1="80" y1="310" x2="104" y2="310" stroke="#a05050" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+    <text x="108" y="314" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">暗克</text>
+    <line x1="140" y1="310" x2="164" y2="310" stroke="#8a7232" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.3"/>
+    <text x="168" y="314" font-size="8" fill="#7a756c" font-family="'Noto Serif SC',serif">同轴</text>
+  </svg>
+</div>
+
+<div class="concept-grid">
+  <div class="concept-card">
+    <div class="tag gold">每乡两层功夫</div>
+    <h3>定力 · 法力</h3>
+    <p><em>定力</em>（修己）= 不被这一乡转走<br><em>法力</em>（用人）= 能调动它为你所用<br>定力是根，法力是用。根不稳则用必乱。</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag gold">两轴定位</div>
+    <h3>我是谁 · 我往哪去</h3>
+    <p><em>自我轴</em>（自大↔光环）解决身份问题<br><em>时间轴</em>（幻想↔叙事）解决方向问题<br>两轴交叉点 = 你此刻的修行位置</p>
+  </div>
+</div>
+
+<!-- Section 2: Zhu Xiang Engine -->
+<div class="section-head">
+  <div class="num">2</div>
+  <div class="label">住相引擎</div>
+  <div class="sub">底层操作系统 · 为什么人会被困住</div>
+</div>
+
+<div class="concept-card full" style="margin-bottom:10px;">
+  <div class="tag red">核心定义</div>
+  <h3>住相 = 把暂时的真相当成永恒的真理</h3>
+  <p>四乡不是技巧，是四种人最容易住进去的相。住在里面的人不觉得自己在住，只觉得自己在坚持真理。</p>
+</div>
+
+<div class="concept-card full" style="margin-bottom:10px;">
+  <div class="tag red">自我强化闭环</div>
+  <h3>为什么越住越深</h3>
+  <div class="flow-chain">
+    <div class="node">住相</div><span class="arrow">→</span>
+    <div class="node">排异</div><span class="arrow">→</span>
+    <div class="node">抬杠</div><span class="arrow">→</span>
+    <div class="node red-node">情绪</div><span class="arrow">→</span>
+    <div class="node red-node">偏见</div><span class="arrow">→</span>
+    <div class="node">更深的住相</div>
+  </div>
+  <p>排异 = 否定矛盾信息 · 抬杠 = 寻找支持证据 · 情绪 = 住相被威胁时的防御 · 偏见 = 分歧升级为人格否定</p>
+</div>
+
+<div class="concept-grid">
+  <div class="concept-card">
+    <div class="tag blue">冰山结构</div>
+    <h3>表层 vs 深层住相</h3>
+    <p><em>表层</em>：自己意识到的信念（"我是对的"）<br><em>深层</em>：不自知的驱动力（"我害怕错了意味着我不够好"）<br>表层修是治标，深层修才是治本。</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag green">燃料观</div>
+    <h3>执念是中性的</h3>
+    <p>执念不是坏的，是<em>一切行为的燃料</em>。<br>不评判对错，只看流向：<br>驱动行动？扭曲感知？碰撞冲突？被看破？螺旋上升？</p>
+  </div>
+</div>
+
+<div class="concept-card full" style="margin:10px 0;">
+  <div class="tag purple">精确定位工具</div>
+  <h3>三维九宫格</h3>
+  <div class="nine-grid">
+    <div class="cell head"></div>
+    <div class="cell head">价值感</div>
+    <div class="cell head">控制感</div>
+    <div class="cell head">归属感</div>
+    <div class="cell row-head">自我</div>
+    <div class="cell"><em>我必须证明</em><br>→ 自大乡</div>
+    <div class="cell"><em>我必须掌控</em><br>→ 自大乡</div>
+    <div class="cell"><em>我必须融入</em><br>→ 叙事乡</div>
+    <div class="cell row-head">他人</div>
+    <div class="cell"><em>别人认可定义我</em><br>→ 光环乡</div>
+    <div class="cell"><em>别人想控制我</em><br>→ 光环乡</div>
+    <div class="cell"><em>别人终将背叛</em><br>→ 叙事乡</div>
+    <div class="cell row-head">世界</div>
+    <div class="cell"><em>世界奖励有价者</em><br>→ 幻想乡</div>
+    <div class="cell"><em>世界可被理解</em><br>→ 幻想乡</div>
+    <div class="cell"><em>世界是善意的</em><br>→ 叙事乡</div>
+  </div>
+</div>
+
+<!-- Section 3: Collision -->
+<div class="section-head">
+  <div class="num">3</div>
+  <div class="label">碰撞与升级</div>
+  <div class="sub">关系是怎么一步步变糟的</div>
+</div>
+
+<div class="concept-card full" style="margin-bottom:10px;">
+  <div class="tag red">住相碰撞升级路径</div>
+  <div class="flow-chain">
+    <div class="node">表面和谐</div><span class="arrow">→</span>
+    <div class="node">事件触发</div><span class="arrow">→</span>
+    <div class="node">分歧</div><span class="arrow">→</span>
+    <div class="node red-node">抬杠</div><span class="arrow">→</span>
+    <div class="node red-node">情绪升级</div><span class="arrow">→</span>
+    <div class="node">破裂 / 松动</div>
+  </div>
+  <p>不同阶段修法不同：分歧阶段修"看见对方有道理"，抬杠阶段修"分清说服与理解"，情绪阶段先止血不讲道理。</p>
+</div>
+
+<div class="concept-grid">
+  <div class="concept-card">
+    <div class="tag red">典型碰撞</div>
+    <h3>自大 × 叙事</h3>
+    <p>"你从来不听我说话" vs "你说的都是废话"<br>你的自大乡看不见他的叙事乡，他的叙事乡控诉你的自大乡。</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag red">典型碰撞</div>
+    <h3>幻想 × 光环</h3>
+    <p>你画了未来的饼，对方信了，但你的真实状态和人设不符。真相浮出时，光环碎，幻想也碎。</p>
+  </div>
+</div>
+
+<!-- Section 4: Practice Depth -->
+<div class="section-head">
+  <div class="num">4</div>
+  <div class="label">修行深度</div>
+  <div class="sub">四层感知 · 你修到哪一层了</div>
+</div>
+
+<div class="layers-row">
+  <div class="layer-chip">
+    <div class="lv">L1</div>
+    <div class="ln">行为层<br><em style="color:#d4cfc4;font-size:10px;">学会闭嘴</em></div>
+  </div>
+  <div class="layer-chip">
+    <div class="lv" style="color:var(--green)">L2</div>
+    <div class="ln">情感层<br><em style="color:#d4cfc4;font-size:10px;">觉察情绪</em></div>
+  </div>
+  <div class="layer-chip">
+    <div class="lv" style="color:var(--blue)">L3</div>
+    <div class="ln">认知层<br><em style="color:#d4cfc4;font-size:10px;">看破住相</em></div>
+  </div>
+  <div class="layer-chip">
+    <div class="lv" style="color:var(--purple)">L4</div>
+    <div class="ln">存在层<br><em style="color:#d4cfc4;font-size:10px;">触及空性</em></div>
+  </div>
+</div>
+
+<div class="concept-grid">
+  <div class="concept-card">
+    <div class="tag gold">L1-L2 = 定力基础</div>
+    <h3>不被表象牵动</h3>
+    <p>L1：改变外在行为（忍住不说、学会夸人）<br>L2：处理情绪反应（觉察愤怒/委屈但不被带走）</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag purple">L3-L4 = 法力之源</div>
+    <h3>看到住相本身</h3>
+    <p>L3："我不是对的，我只是住在了'对'里面"<br>L4：连"我要修行"这个住相也看到了，自由出入</p>
+  </div>
+</div>
+
+<!-- Section 5: Formal vs Dialectical -->
+<div class="section-head">
+  <div class="num">5</div>
+  <div class="label">形式逻辑 vs 辩证逻辑</div>
+  <div class="sub">每乡的思维层次 · 多数人在形式层，高手在辩证层</div>
+</div>
+
+<div class="concept-card full" style="margin-bottom:10px;">
+  <div class="tag gold">核心洞察</div>
+  <h3>形式逻辑 = 单变量、线性、凭感觉下判断</h3>
+  <p>形式逻辑把世界切成固定范畴，住在里面不走。<em>住相就是形式逻辑的产物。</em><br>辩证逻辑天然破相——它不允许任何单一范畴垄断真相。</p>
+</div>
+
+<div class="concept-grid">
+  <div class="concept-card">
+    <div class="tag red">形式</div>
+    <h3>自大乡 · 形式版</h3>
+    <p><em>"我对，你错"</em>——二元判断<br>住相：我必须是对的<br>别人的不同 = 对我的否定</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag gold">辩证</div>
+    <h3>自大乡 · 辩证版</h3>
+    <p><em>"我可以同时对和错"</em>——取决于参照系<br>他的视角和我的在不同框架下都成立<br>不需要"忍住"，因为看到了多面</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag red">形式</div>
+    <h3>幻想乡 · 形式版</h3>
+    <p><em>"以后会更好"</em>——线性外推<br>住相：未来必须按我想象的发展<br>要么一定成功，要么彻底绝望</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag gold">辩证</div>
+    <h3>幻想乡 · 辩证版</h3>
+    <p><em>"不确定，但我依然行动"</em>——多可能并存<br>规划和即兴不矛盾<br>确定性和开放性可以同时持有</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag red">形式</div>
+    <h3>光环乡 · 形式版</h3>
+    <p><em>"我是X"</em>——身份固化成标签<br>住相：我必须是我"应该是"的人<br>一辈子维护一个形象</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag gold">辩证</div>
+    <h3>光环乡 · 辩证版</h3>
+    <p><em>"我是流动的、多面的"</em>——情境化的我<br>在你面前是A，独处时是C，都是真的<br>拆掉人设，魅力依然存在</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag red">形式</div>
+    <h3>叙事乡 · 形式版</h3>
+    <p><em>"我付出了，应该得到"</em>——线性因果<br>住相：我的版本是唯一正确的<br>关系当记账，付出必须对等</p>
+  </div>
+  <div class="concept-card">
+    <div class="tag gold">辩证</div>
+    <h3>叙事乡 · 辩证版</h3>
+    <p><em>"故事是共同写的"</em>——随时可重写<br>付出和回报不是线性的，是纠缠的<br>放弃"我的版本"，允许被重新解读</p>
+  </div>
+</div>
+
+<div class="concept-card full" style="margin-top:4px;">
+  <div class="tag green">修行方向</div>
+  <h3>从形式到辩证 = 从"忍"到"看穿"</h3>
+  <p>形式逻辑的定力 = 我忍住了（但还是痛）。辩证逻辑的定力 = 我根本不需要忍（因为我同时看到了多个面，没有哪个面需要捍卫）。<br><em>大部分人的修行停在形式层，只有少部分高手修到了辩证层。</em></p>
+</div>
+
+<!-- Section 6: Ultimate -->
+<div class="section-head">
+  <div class="num">6</div>
+  <div class="label">终极指向</div>
+  <div class="sub">空性与妙用</div>
+</div>
+
+<div class="concept-card full">
+  <h3>不是修到没有住相，是修到能自由出入</h3>
+  <p><em>空性</em>：每一乡都没有固定的本质，意义取决于你如何使用它。<br><em>妙用</em>：正因为是空的，才什么都能是。<br><br>用，就住进去——为当下全力以赴。不用，就出来——不带走任何东西。<br>一气周流，四乡归一。</p>
+</div>
+
+<div class="verse">
+  <p>
+    不被四乡所转，是定力。<br>
+    能转他人四乡，是法力。<br>
+    <span class="dim">看透住相是引擎，自由出入是修行。</span>
+  </p>
+</div>
+
+<div style="text-align:center;margin-top:32px;font-size:11px;color:var(--ink-dim);letter-spacing:6px;opacity:0.5;">
+  四乡法门 · 概念全景图
+</div>
+
+</div>
+</body>
+</html>
