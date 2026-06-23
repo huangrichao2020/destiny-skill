@@ -1,11 +1,12 @@
 ---
 name: destiny-skill
 description: 命运 Skill 与四乡修行法门。用于 社交直觉弱、遇不到对的人、抓不住对的人、关系困惑、人际博弈、情感拉扯、自我修行、观命通、警惕通、他心通、距离通、幻想乡、自大乡、光环乡、叙事乡、定力法力、住相、三维九宫格、形式逻辑辩证逻辑、上帝视角、当断则断、男性价值、强者转化、价值修炼、翻页判断、四乡诊断报告。Do NOT trigger for 纯恋爱技巧或操控术。
+cross-ref: cheat-on-content@1.0 — 借用其 5 阶段闭环做内容质量校准（不污染 blind 通道）
 ---
 
 # Destiny Skill × 四乡修行法门
 
-Use this skill when the user asks for 命运 Skill, 四乡修行法门, social intuition, relationship fate, 四乡分析, 定力法力, 住相诊断, 修行卡点, 上帝视角, 当断则断, creating memorable low-pressure moments, or turning a specific relationship event into reusable training.
+Use this skill when the user asks for 命运 Skill, 四乡修行法门, social intuition, relationship fate, 四乡分析, 定力法力, 住相诊断, 修行卡点, 上帝视角, 当断则断, creating memorable low-pressure moments, turning a specific relationship event into reusable training, **or when the user asks to convert a 四乡 diagnosis into a publishable 小红书/抖音/视频号/公众号 post** (读 `references/content-output.md` + `references/style-anchors.md`), **or when the user wants to understand "短择" / "PUA" / "情感操控" mechanisms in order to recognize them being used on them or to identify their own住相** (读 `references/short-relation-mechanics-识别清单.md` — 识别 ≠ 使用).
 
 This skill is primarily Chinese. Read these references as needed:
 
@@ -13,7 +14,10 @@ This skill is primarily Chinese. Read these references as needed:
 references/destiny-skill-universal-cultivation.zh-CN.md  ← 四通 + 命运修炼总纲
 references/full-framework.md                              ← 四乡完整修法（定力/法力详解）
 references/human-nature-engine.md                         ← 住相人性引擎（底层操作系统）
-assets/concept-map.html                                   ← 概念全景图（六层结构总览）
+references/content-output.md                              ← 内容化输出协议（诊断 → 小红书/抖音文案）
+references/style-anchors.md                               ← 文风锚点库（首批 6 张爆款金句样本）
+references/short-relation-mechanics-识别清单.md          ← 9 个短择机制识别清单（识别 ≠ 使用，哲学修行版）
+assets/concept-map.html                                   ← 概念全景图（七层结构总览，含内容化输出）
 assets/report-template.html                               ← HTML 诊断报告模板
 ```
 
@@ -104,6 +108,20 @@ When analyzing a case, merge both frameworks:
 翻页判断：这件事还能现实修复，还是只剩自我修炼？
 今日修行：一个最小现实动作。
 ```
+
+## 内容化输出（Application出口）
+
+当用户说以下触发词时，读 `references/content-output.md` + `references/style-anchors.md`：
+
+- `把诊断变成小红书文案` / `生成情感类内容` / `基于四乡出一篇内容`
+- `情感文案改写` / `把这段诊断写成爆款` / `给我写一条关于 X 的情感文案`
+- `写一篇关于命运 Skill 的内容` / `写一篇关于住相的内容`
+
+**关键规则**：
+- 必须先有**一个具体诊断案例**——不写"现代人都很焦虑"这种抽象稿
+- 内容发出前对照 6 条铁律 + 输出检查清单（详见 `content-output.md`）
+- 严格遵守 destiny-skill 红线——不做操控术、不追击、不冷暴力、不借命运叙事绑架现实反馈
+- **金句锚点服务写作，不服务真理**——让人"咯噔"≠ 让人"对了"
 
 ## 生成可视化报告（可选）
 

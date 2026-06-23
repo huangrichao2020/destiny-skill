@@ -65,10 +65,13 @@
 ├── references/
 │   ├── destiny-skill-universal-cultivation.zh-CN.md  ← 四通 + 命运修炼总纲
 │   ├── full-framework.md                              ← 四乡完整修法详解
-│   └── human-nature-engine.md                         ← 住相人性引擎
+│   ├── human-nature-engine.md                         ← 住相人性引擎
+│   ├── content-output.md                              ← 内容化输出协议（诊断 → 小红书/抖音文案）
+│   ├── style-anchors.md                               ← 文风锚点库（首批 6 张爆款金句样本）
+│   └── short-relation-mechanics-识别清单.md          ← 9 个短择机制识别清单（识别 ≠ 使用）
 └── assets/
     ├── report-template.html   ← HTML 诊断报告模板
-    └── concept-map.html       ← 概念全景图（六层结构总览）
+    └── concept-map.html       ← 概念全景图（七层结构总览，含内容化输出）
 ```
 
 ## 使用方式
@@ -86,7 +89,24 @@
 我想从形式逻辑升级到辩证逻辑
 帮我设计一个低压力、有余味的 moment
 出一份四乡诊断报告
+—— 内容化输出 ——
+把这次诊断变成小红书文案
+生成情感类内容
+基于四乡出一篇内容
+情感文案改写
+—— 短择机制识别（防御 / 自检） ——
+为什么 PUA 有效
+短择技巧原理
+间歇性强化 / 多巴胺操控 是怎么回事
+识别情感操控
+她是不是在用套路
+我是不是住相了
 ```
+
+## 跨项目集成（cross-ref）
+
+- **`cheat-on-content@1.0`**：借用其 5 阶段闭环做内容质量校准（选题→打分→预测→复盘→进化）。**不污染 blind 通道**——文风锚点仅服务写作 lens，不进 rubric 公式
+- 在 destiny-skill SKILL.md header 已加 `cross-ref:` 字段
 
 ## 安全边界
 
